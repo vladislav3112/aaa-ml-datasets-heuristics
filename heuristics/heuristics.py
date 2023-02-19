@@ -102,7 +102,7 @@ def calculate_text_heuristics(
     title_desc_df['description_match'] = title_desc_df['description'].apply(
         lambda x: find_text_patterns(
             text=x,
-            include_re=include_re,
+            include_re=[re.compile(r'.')],
             exclude_re=exclude_re,
         )
     )
